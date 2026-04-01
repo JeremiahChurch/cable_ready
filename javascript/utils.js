@@ -202,6 +202,7 @@ async function graciouslyFetch (url, additionalHeaders) {
     return response
   } catch (e) {
     console.error(`Could not fetch ${url}`)
+    return new Response('')
   }
 }
 
