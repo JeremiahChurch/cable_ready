@@ -254,7 +254,8 @@ class Block {
           )
 
           const frameTemplate = document.createElement('template')
-          if (frameResponse) frameTemplate.innerHTML = await frameResponse.text()
+          if (frameResponse)
+            frameTemplate.innerHTML = await frameResponse.text()
 
           // recurse here to get all nested eager loaded frames
           await this.resolveTurboFrames(frameTemplate.content)

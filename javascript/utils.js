@@ -173,9 +173,15 @@ function safeObject (obj) {
 
 function safeStringOrArray (elem) {
   if (elem !== undefined && !Array.isArray(elem) && typeof elem !== 'string')
-    console.warn(`Operation expects an Array or a String, but got ${elem} (${typeof elem})`)
+    console.warn(
+      `Operation expects an Array or a String, but got ${elem} (${typeof elem})`
+    )
 
-  return elem == null ? '' : Array.isArray(elem) ? Array.from(elem) : String(elem)
+  return elem == null
+    ? ''
+    : Array.isArray(elem)
+    ? Array.from(elem)
+    : String(elem)
 }
 
 function fragmentToString (fragment) {
